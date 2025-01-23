@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+@import '@angular/cdk/overlay-prebuilt.css';
+
+.custom-overlay-container {
+  max-height: 100px !important;
+  overflow-y: auto;
+  scrollbar-width: 30px;
+}
+
+.custom-overlay-container::-webkit-scrollbar {
+  width:50px;
+}
+
+.custom-overlay-container::-webkit-scrollbar-track {
+  background-color: cadetblue;
+}
+
+.custom-overlay-container::-webkit-scrollbar-thumb {
+  background-color: burlywood;
+}
+
+.scrollbar-container {
+  background-color: transparent;
+}

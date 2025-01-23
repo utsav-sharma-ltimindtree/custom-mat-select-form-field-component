@@ -1,0 +1,29 @@
+<div cdkOverlayOrigin #parent="cdkOverlayOrigin" class='custom-select-container'>
+  <input type="text" matInput (click)="toggleOverlay()" [value]="selectedValue"
+    [disabled]="disabled" [placeholder]="placeholder" />
+  <button mat-icon-button *ngIf="selectedValue" (click)='close()'>
+    <mat-icon matSuffix>close</mat-icon>
+  </button>
+  <button mat-icon-button (click)='toggleOverlay()'>
+    <mat-icon matSuffix>arrow_drop_down</mat-icon>
+  </button>
+</div>
+<ng-template cdkConnectedOverlay
+  [cdkConnectedOverlayOrigin]="parent"
+  [cdkConnectedOverlayOpen]="overlayOpened"
+  cdkConnectedOverlayWidth="78.5%"
+  [cdkConnectedOverlayHasBackdrop]="true"
+  [cdkConnectedOverlayOffsetX]="-12"
+  [cdkConnectedOverlayOffsetY]="18"
+  cdkConnectedOverlayBackdropClass="scrollbar-container"
+  cdkConnectedOverlayPanelClass="custom-overlay-container"
+  (overlayOutsideClick)="overlayOpened = false"
+  (backdropClick)="overlayOpened = false"
+  >
+
+  <div style='height: 100%; width: 100%; background-color: rgb(250, 250, 250);'>
+    <mat-option *ngFor="let option of options" [value]="option" (onSelectionChange)="onOptionSelectionChange($event)">
+      {{ option[valueName] }}
+      </mat-option>
+  </div>
+</ng-template>

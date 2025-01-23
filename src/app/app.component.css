@@ -1,0 +1,19 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+}
+
+.mat-form-field {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin: auto;
+}
+
+::ng-deep .mat-form-field-wrapper {
+  width: 100%;
+  margin: auto;
+}
